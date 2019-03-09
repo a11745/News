@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="../resources/js/jquery-3.2.1.min.js" charset="utf-8"></script>
+<title>Insert title here</title>
+</head>
+
+<body>
+	<div class="content-block">
+	    <p>
+	    
+	    	你好，<span id="user-name"></span>
+	    	<span id="status"></span>
+	    	<span id="msg"></span>
+	    </p>
+	 </div>
+</body>
+
+<script type="text/javascript">
+$(function () {
+	
+	getlist();
+	function getlist(e) {
+		$.ajax({
+			url : "/News/user/get_one.do",
+			type : "get",
+			dataType : "json",
+			success : function(data) {
+				if (data.status==0) {
+					handleUser(data);
+				}
+			}
+		});
+	}
+	//登录用户名信息
+	function handleUser(data) {
+		$('#user-name').text(data.data.userName);
+	}
+});
+</script>
+
+</html>

@@ -1,0 +1,101 @@
+package com.atyou.service.impl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.atyou.common.EasyUITreeNode;
+import com.atyou.common.TaotaoResult;
+import com.atyou.dao.CategoryMapper;
+import com.atyou.pojo.Category;
+import com.atyou.pojo.CategoryExample;
+import com.atyou.pojo.CategoryExample.Criteria;
+import com.atyou.service.CatgoryManageService;
+import com.fasterxml.jackson.core.sym.Name;
+
+/**
+ * 新闻目录管理
+ * @author 赵玉龙
+ */
+
+@Service
+public class CatgoryManageServiceImpl implements CatgoryManageService{
+	
+	@Autowired
+	private CategoryMapper categoryMapper;
+
+	//返回目录列表
+	@Override
+	public List<EasyUITreeNode> getCatgoryCatList(Integer parentId) {
+		//根据parentId查询子节点列表
+		CategoryExample example = new CategoryExample();
+		Criteria criteria = example.createCriteria();
+		criteria.andParentIdEqualTo(parentId);
+		//执行查询
+		List<Category> list = categoryMapper.selectByExample(example);
+		//转换成EasyUITreeNode列表
+		List<EasyUITreeNode> resultList = new ArrayList<>();
+		for (Category category : list) {
+			//创建一个节点
+			EasyUITreeNode node = new EasyUITreeNode();
+			node.setId(category.getId());
+			node.setText(category.getCategory());
+			node.setState(category.getIsParent() ? "closed" : "open");
+			//添加到列表
+			resultList.add(node);
+		}
+		return resultList;
+		
+	}
+
+	//新增新闻目录
+	@Override
+	public TaotaoResult insertCatgory(Integer parentId, String category) {
+		//创建一个pojo对象
+		Category catgory = new Category();
+		catgory.setCategory(category);
+		catgory.setParentId(parentId);
+		catgory.setIsParent(false);
+		//插入数据
+		categoryMapper.insert(catgory);
+		//取返回的主键
+		Integer id = catgory.getId();
+		//判断父节点的isparent属性
+		//查询父节点
+		Category parentNode = categoryMapper.selectByPrimaryKey(parentId);
+		if(!parentNode.getIsParent()) {
+			parentNode.setIsParent(true);
+			//更新父节点
+			categoryMapper.updateByPrimaryKey(parentNode);
+		}
+		//返回主键
+		return TaotaoResult.ok(id);
+	}
+
+	//更新目录名
+	@Override
+	public TaotaoResult renameCatgory(Integer id, String catgory) {
+		// 根据id查询目标目录
+		Category category = categoryMapper.selectByPrimaryKey(id);
+		//判断名字是否重复和存在
+		if (catgory != null && catgory.equals(category.getCategory())) {
+			return TaotaoResult.ok();
+		}
+		//设置修改后的名字
+		category.setCategory(catgory);
+		categoryMapper.updateByPrimaryKey(category);
+		return TaotaoResult.ok();
+
+	}
+	
+}
+
+
+
+
+
+
+
+

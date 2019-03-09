@@ -1,0 +1,13 @@
+0:0:0:0:0:0:0:1 - - [21/Apr/2018:11:22:01 +0800] "GET /login HTTP/1.1" 200 5486 http-bio-8081-exec-1 862
+0:0:0:0:0:0:0:1 - - [21/Apr/2018:11:22:01 +0800] "GET /js/bootstrap-3.3.2-dist/css/bootstrap.css HTTP/1.1" 304 - http-bio-8081-exec-2 19
+0:0:0:0:0:0:0:1 - - [21/Apr/2018:11:22:01 +0800] "GET /js/jquery/jquery-2.1.3.js HTTP/1.1" 304 - http-bio-8081-exec-5 10
+0:0:0:0:0:0:0:1 - - [21/Apr/2018:11:22:01 +0800] "GET /static/css/main.css HTTP/1.1" 304 - http-bio-8081-exec-4 9
+0:0:0:0:0:0:0:1 - - [21/Apr/2018:11:22:01 +0800] "GET /js/bootstrap-3.3.2-dist/js/bootstrap.js HTTP/1.1" 304 - http-bio-8081-exec-6 20
+0:0:0:0:0:0:0:1 - - [21/Apr/2018:11:22:01 +0800] "GET /static/bootstrap-3.3.7-dist/css/bootstrap.min.css HTTP/1.1" 304 - http-bio-8081-exec-3 32
+0:0:0:0:0:0:0:1 - - [21/Apr/2018:11:22:01 +0800] "GET /js/plugins/jquery.form.js HTTP/1.1" 304 - http-bio-8081-exec-7 27
+0:0:0:0:0:0:0:1 - - [21/Apr/2018:11:22:01 +0800] "GET /js/jquery.bootstrap.min.js HTTP/1.1" 304 - http-bio-8081-exec-8 5
+0:0:0:0:0:0:0:1 - - [21/Apr/2018:11:22:01 +0800] "GET /static/bootstrap-3.3.7-dist/js/bootstrap.min.js HTTP/1.1" 304 - http-bio-8081-exec-9 3
+0:0:0:0:0:0:0:1 - - [21/Apr/2018:11:22:01 +0800] "GET /static/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff2 HTTP/1.1" 304 - http-bio-8081-exec-9 19
+0:0:0:0:0:0:0:1 - - [21/Apr/2018:11:22:08 +0800] "POST /weblogin HTTP/1.1" 200 68 http-bio-8081-exec-9 5167
+0:0:0:0:0:0:0:1 - - [21/Apr/2018:11:22:19 +0800] "POST /weblogin HTTP/1.1" 200 57 http-bio-8081-exec-9 101
+0:0:0:0:0:0:0:1 - - [21/Apr/2018:11:22:19 +0800] "GET /index HTTP/1.1" 200 8405 http-bio-8081-exec-9 119

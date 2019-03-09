@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xsi:schemaLocation="
+	    http://www.springframework.org/schema/mvc 
+		http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd ">
+	
+	<mvc:annotation-driven/>
+	<!-- 1、SpringMVC的配置文件，扫描com.athome.o2o.controller所有类  -->
+	<context:component-scan base-package="com.atyou.controller"/>
+	
+	
+	
+	<!-- 2、静态资源默认Servlet配置
+			1）加入对静态资源的处理
+			2）允许使用“/”做整体映射
+			 -->
+	<mvc:resources location="/resources/" mapping="/resources/**"/>
+		
+	<!-- 3、两个标准配置 -->
+	<!-- 1）、将SpringMVC不能处理的请求交给Tomcat 如静态资源-->
+	<mvc:default-servlet-handler/>
+	
+	<!-- 4、配置视图解析器，方便页面返回 -->
+<!-- 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/html/"></property>
+		<property name="suffix" value=".html"></property>
+	</bean> -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+	<!-- 配置资源映射 -->
+	<mvc:resources location="/css/" mapping="/css/**"/>
+	<mvc:resources location="/js/" mapping="/js/**"/>
+	
+	 
+	
+	<!-- 文件上传解析器 -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="defaultEncoding" value="utf-8"></property>
+		<!-- 文件上传最大尺寸 1024*1024*20字节=20M -->
+		<property name="maxUploadSize" value="20971520"></property>
+		<!-- 最大内存 -->
+		<property name="maxInMemorySize" value="20971520"></property>
+	</bean>
+	
+	
+	
+</beans>

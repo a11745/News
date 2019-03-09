@@ -1,0 +1,211 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>新闻详情页</title>
+<link rel="stylesheet" href="/static/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body>
+	<nav class="navbar navbar-default">
+	  <div class="container">
+	    <div class="navbar-header">
+	    	<div class="col-xs-2">
+		      	<a href="/index" class="navbar-brand"></a>
+		    </div>
+	    	<div class="col-xs-8 visible-xs">
+	    		<div class="col-xs-7">
+			    </div>
+	    		<div class="col-xs-5">
+				  	<ul class="nav navbar-nav navbar-right"> 
+			          <li><a href="/login"><span class="glyphicon glyphicon-user"></span> 注册</a></li> 
+			        </ul>
+			        
+			    </div>
+			</div>
+			<div class="col-xs-2">
+			  	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" 
+	      				data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			        <span class="sr-only">更多</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
+			</div>
+	    </div>
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	    	<div class="row">
+			  <div class="col-xs-3 col-sm-1 col-md-1">
+			  	<ul class="nav navbar-nav">
+			  		<li id="tes"><a href="#">热闻</a></li>
+			  	</ul>
+			  </div>
+			  
+			  <div class="col-xs-3 col-sm-1 col-md-1">
+			  	<ul class="nav navbar-nav">
+			  		<li id="tes"><a href="#">国际</a></li>
+			  	</ul>
+			  </div>
+			  <div class="col-xs-3 col-sm-1 col-md-1">
+			  	<ul class="nav navbar-nav">
+			  		<li id="tes"><a href="#">数读</a></li>
+			  	</ul>
+			  </div>
+			  <div class="col-xs-3 col-sm-1 col-md-1">
+			  	<ul class="nav navbar-nav">
+			  		<li id="tes"><a href="#">社会</a></li>
+			  	</ul>
+			  </div>
+			  <div class="col-xs-3 col-sm-1 col-md-1">
+			  	<ul class="nav navbar-nav">
+			  		<li id="tes"><a href="#">军事</a></li>
+			  	</ul>
+			  </div>
+			  <div class="col-xs-3 col-sm-1 col-md-1">
+			  	<ul class="nav navbar-nav">
+			  		<li id="tes"><a href="#">政务</a></li>
+			  	</ul>
+			  </div>
+			   <div class="col-xs-3 col-sm-1 col-md-1">
+			  	<ul class="nav navbar-nav">
+			  		<li id="tes"><a href="#">公益</a></li>
+			  	</ul>
+			  </div>
+			   <div class="col-xs-3 col-sm-1 col-md-1">
+			  	<ul class="nav navbar-nav">
+			  		<li id="tes"><a href="#">体育</a></li>
+			  	</ul>
+			  </div>
+			  <div class="col-xs-3 col-sm-1 col-md-1 hidden-xs">
+			  	<ul class="nav navbar-nav">
+			  		<li id="tes" class="dropdown">
+		                <a href="#" class="dropdown-toggle" data-toggle="dropdown"> 更多
+		                    <b class="caret"></b>
+		                </a>
+		                <ul class="dropdown-menu">
+		                    <li id="tea"><a href="#">娱乐</a></li>
+		                    <li class="divider"></li>
+		                    <li id="tea"><a href="#">房价</a></li>
+		                </ul>
+		            </li>
+			  	</ul>
+			  </div>
+			  <div class="col-sm-1 hidden-xs ">
+			  	<ul class="nav navbar-nav navbar-right "> 
+		          <li id="tes">
+		          	<a href="/signup"><span class="glyphicon glyphicon-user"></span> 注册</a>
+		          </li> 
+		        </ul>
+			  </div>
+			  <div class="col-sm-1 hidden-xs ">
+			  	<ul class="nav navbar-nav navbar-right "> 
+		           <li id="tes"><a href="/login"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li> 
+		        </ul>
+			  </div>
+			</div>
+	    </div>
+	  </div>
+	</nav>
+	
+	<div class="container">
+		<div class="col-md-8">
+			<h1 class="news-title">24小时内2名中国学生在英国失联%20使馆、警方已介入</h1>
+			<div class="news-status">25K阅读·35分钟前发布
+				<div class="label label-default">教育</div>
+				<div class="label label-default">情感</div>
+			</div>
+			<div class="news-content">
+				<blockquote>
+					<p>
+						[摘要]一人确认为伦敦国王学院女博士闫思宏，另一人疑似帝国理工学院材料系本科学生荣露琦。
+						两名同学目前仍在失联中，其中身份确定的闫思宏失踪事件警方校方及大使馆均已介入，荣露琦同学的情况正在紧急核查中。
+					</p>
+				</blockquote>
+				<div>
+					2月26日，中国驻英国伦敦大使馆发布，伦敦国王学院闫姓36岁中国女博士失联，家属正求助使馆和当地警方寻人。
+				与此同时，24小时内还有另一名中国留学生处于失联状态，疑似帝国理工学院（IC）本科材料系学生荣某。
+				看到这一消息，相信不少网友会联想到前一段时间闹得沸沸扬扬的“江歌案”和“章莹颖案”。
+				</div>
+				<div>
+					留学人员安全一直是一个令人担心的话题。你或你身边的人在留学过程中感受到安全吗？在那里留学是一种怎样的体验，
+					能有安全感吗？我们先来看看企鹅问答上的留学生们怎么说？
+				</div>
+				<img alt="" src="/static/image/2-1.jpg">
+				<div>
+					像我们凯斯西储大学，教学楼的门上，都会贴上，禁止携带武器的标志。当时刚去，看到这个标志被吓了一跳。
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="side-bar-card">
+				<div class="card-title">相关推荐</div>
+				<div class="card-body">
+					<div class="list">
+						<div class="item clearfix">
+							<div class="col-xs-5 no-padding-h"><img src="/static/image/2-2.jpg"></div>
+							<div class="col-xs-7">
+								<div class="title">李克强：反腐败斗争压倒性态势已经形成并巩固发展</div>
+								<div class="desc">15K阅读  1K评论</div>
+							</div>
+						</div>
+						<div class="item clearfix">
+							<div class="col-xs-5 no-padding-h"><img src="/static/image/2-2.jpg"></div>
+							<div class="col-xs-7">
+								<div class="title">李克强：五年来重点城市重污染天数减少一半</div>
+								<div class="desc">15K阅读  1K评论</div>
+							</div>
+						</div>
+						<div class="item clearfix">
+							<div class="col-xs-5 no-padding-h"><img src="/static/image/2-2.jpg"></div>
+							<div class="col-xs-7">
+								<div class="title">李克强：反腐败斗争压倒性态势已经形成并巩固发展</div>
+								<div class="desc">15K阅读  1K评论</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			
+			<div class="side-bar-card">
+				<div class="card-title">24小时热闻</div>
+				<div class="card-body">
+					<div class="list">
+						<div class="item">
+							<a class="title">李克强：反腐败斗争压倒性态势已经形成并巩固发展</a>
+							<div class="desc">15K阅读  1K评论</div>
+						</div>
+						<div class="item">
+							<div class="title">李克强：五年来重点城市重污染天数减少一半</div>
+							<div class="desc">15K阅读  1K评论</div>
+						</div>
+						<div class="item">
+							<div class="title">2018年GDP增长预期目标为6.5%左右</div>
+							<div class="desc">15K阅读  1K评论</div>
+						</div>
+						<div class="item">
+							<div class="title">好消息！移动网络流量资费年内至少降低30%</div>
+							<div class="desc">15K阅读  1K评论</div>
+						</div>
+						<div class="item">
+							<div class="title">个人所得税起征点将提高</div>
+							<div class="desc">15K阅读  1K评论</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 页脚 -->
+	<div class="footer">
+		栓蛋头条 © 1998 - 2018 黑龙江科技大学版权所有
+	</div>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/static/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+package com.atyou.controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.atyou.common.EasyUIDataGridResult;
+import com.atyou.common.TaotaoResult;
+import com.atyou.pojo.Detail;
+import com.atyou.service.AdminItemQueryService;
+/**
+ * 后台商品查询
+ * @author Administrator
+ *
+ */
+@Controller
+public class AdminItemQueryController {
+	
+	@Autowired
+	private AdminItemQueryService adminItemQueryService;
+	
+	@RequestMapping("/item/list")
+	@ResponseBody
+	public EasyUIDataGridResult getItemList(Integer page,Integer rows) throws Exception{
+		EasyUIDataGridResult result = adminItemQueryService.getItemList(page, rows);
+		return result;
+	}
+	
+	@RequestMapping("/rest/page/item-edit")
+	public String itemEdit()throws Exception{
+		return "item-edit";
+	}
+	
+	@RequestMapping("/rest/item/update")
+	@ResponseBody
+	public TaotaoResult itemUpdate(Detail detail)throws Exception{
+		TaotaoResult result = adminItemQueryService.updateContent(detail);
+		return result;
+	}
+	
+	@RequestMapping("/rest/item/delete")
+	@ResponseBody
+	public TaotaoResult itemDelete(String ids)throws Exception{
+		//System.out.println(ids);
+		String[] strings = ids.split(",");
+		List<Integer> list = new ArrayList<>();
+		for (String string : strings) {
+			//System.out.println(Long.valueOf(string));
+			list.add(Integer.valueOf(string));
+		}
+		TaotaoResult result = adminItemQueryService.delContent(list);
+		return result;
+	}
+	
+}

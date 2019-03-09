@@ -1,0 +1,98 @@
+package com.atyou.controller;
+
+
+
+import java.io.UnsupportedEncodingException;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.junit.runner.Request;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.alibaba.fastjson.support.spring.FastJsonJsonView;
+import com.atyou.pojo.Category;
+import com.atyou.pojo.CategoryExample;
+import com.atyou.pojo.CategoryExample.Criteria;
+import com.atyou.pojo.Detail;
+import com.atyou.pojo.DetailExample;
+import com.atyou.pojo.ParentCategory;
+import com.atyou.service.WebCategoryService;
+import com.atyou.service.WebItemService;
+import com.atyou.util.RequireLogin;
+
+@Controller
+public class UserWebController {
+	
+	@Autowired 
+	private WebCategoryService webCategoryService;
+	@Autowired
+	private WebItemService webItemService;
+
+	@RequestMapping("/index")
+	public String webindex(@RequestParam(value="categoryId",defaultValue="0")Integer categoryId,@RequestParam(value="parentCategoryId",defaultValue="0")Integer parentCategoryId,Model model,HttpServletRequest request) {
+		List<Category> list = webCategoryService.queryCate();
+		List<ParentCategory> parentCateList = webCategoryService.queryParentCate();
+		List<Detail> itemList = webItemService.getItemList(categoryId, parentCategoryId);
+		for (Detail detail : itemList) {
+			System.out.println(detail.getContent());
+		}
+		System.out.println("categoryId::::"+categoryId);
+		System.out.println("parentCategoryId::::"+parentCategoryId);
+		//model.addAttribute("cateList", list);
+		model.addAttribute("parentCategoryId", parentCategoryId);
+		model.addAttribute("parentCate", parentCateList);
+		model.addAttribute("itemList", itemList);
+		request.getSession().setAttribute("cateList", list);
+		return "webindex";
+	}
+	
+	@RequestMapping("/indexCopy")
+	public String webindexCopy() {
+		return "indexCopy";
+	}
+	@RequestMapping("/login")
+	public String weblogin() {
+		
+		return "login";
+	}
+	
+	@RequestMapping("/signup")
+	public String websignup() {
+		return "signup";
+	}
+	
+	@RequireLogin
+	@RequestMapping("/user")
+	public String user(HttpServletRequest request) {
+		if (request.getSession().getAttribute("user")==null) {
+			return "/login";
+		}
+		return "user";
+	}
+	
+	@RequestMapping("/logout")
+	public String webloginout(HttpServletRequest request) {
+		if (request.getSession().getAttribute("user")!=null) {
+			request.getSession().removeAttribute("user");
+		}
+		return "redirect:/index";
+	}
+	
+	@RequestMapping(value="/searchingNews")
+	public String searchNewsByTitle(@RequestParam(value="title")String title,Model model,HttpServletRequest request){
+		//System.out.println(title);
+		List<Detail> itemList = webCategoryService.searchNewsbyTitle(title);
+		if (itemList != null && itemList.size() > 0) {
+			model.addAttribute("itemList", itemList);
+		}
+		return "webindex";
+	}
+	
+}

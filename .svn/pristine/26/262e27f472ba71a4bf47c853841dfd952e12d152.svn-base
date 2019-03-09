@@ -1,0 +1,143 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>注册页面</title>
+<link rel="stylesheet" href="/static/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body>
+	<nav class="navbar navbar-default">
+	  <div class="container">
+	    <div class="navbar-header">
+	    	<div class="col-xs-2">
+		      	<a href="/index" class="navbar-brand"></a>
+		    </div>
+	    	<div class="col-xs-8 visible-xs">
+	    		<div class="col-xs-7">
+			    </div>
+	    		<div class="col-xs-5">
+				  	<ul class="nav navbar-nav navbar-right"> 
+			          <li><a href="/login"><span class="glyphicon glyphicon-user"></span> 登录</a></li> 
+			        </ul>
+			    </div>
+			</div>
+			<div class="col-xs-2">
+			  	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" 
+	      				data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			        <span class="sr-only">更多</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
+			</div>
+	    </div>
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	    	<div class="row">
+			  <div class="col-xs-3 col-sm-1 col-md-1">
+			  	<ul class="nav navbar-nav">
+			  		<li id="tes"><a href="#">热闻</a></li>
+			  	</ul>
+			  </div>
+			  
+			  <div class="col-xs-3 col-sm-1 col-md-1">
+			  	<ul class="nav navbar-nav">
+			  		<li id="tes"><a href="#">国际</a></li>
+			  	</ul>
+			  </div>
+			  <div class="col-xs-3 col-sm-1 col-md-1">
+			  	<ul class="nav navbar-nav">
+			  		<li id="tes"><a href="#">数读</a></li>
+			  	</ul>
+			  </div>
+			  <div class="col-xs-3 col-sm-1 col-md-1">
+			  	<ul class="nav navbar-nav">
+			  		<li id="tes"><a href="#">社会</a></li>
+			  	</ul>
+			  </div>
+			  <div class="col-xs-3 col-sm-1 col-md-1">
+			  	<ul class="nav navbar-nav">
+			  		<li id="tes"><a href="#">军事</a></li>
+			  	</ul>
+			  </div>
+			  <div class="col-xs-3 col-sm-1 col-md-1">
+			  	<ul class="nav navbar-nav">
+			  		<li id="tes"><a href="#">政务</a></li>
+			  	</ul>
+			  </div>
+			   <div class="col-xs-3 col-sm-1 col-md-1">
+			  	<ul class="nav navbar-nav">
+			  		<li id="tes"><a href="#">公益</a></li>
+			  	</ul>
+			  </div>
+			   <div class="col-xs-3 col-sm-1 col-md-1">
+			  	<ul class="nav navbar-nav">
+			  		<li id="tes"><a href="#">体育</a></li>
+			  	</ul>
+			  </div>
+			  <div class="col-xs-3 col-sm-1 col-md-1 hidden-xs">
+			  	<ul class="nav navbar-nav">
+			  		<li id="tes" class="dropdown">
+		                <a href="#" class="dropdown-toggle" data-toggle="dropdown"> 更多
+		                    <b class="caret"></b>
+		                </a>
+		                <ul class="dropdown-menu">
+		                    <li id="tea"><a href="#">娱乐</a></li>
+		                    <li class="divider"></li>
+		                    <li id="tea"><a href="#">房价</a></li>
+		                </ul>
+		            </li>
+			  	</ul>
+			  </div>
+			  <div class="col-sm-1 hidden-xs ">
+			  	<ul class="nav navbar-nav navbar-right"> 
+		          	<li id="tes"><a href="/login"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
+		        </ul>
+			  </div>
+			</div>
+	    </div>
+	  </div>
+	</nav>
+	
+	<div class="container container-small">
+		<h1>注册
+		</h1>
+		<form>
+			<div class="form-group">
+				<label>手机</label>
+				<input type="text" class="form-control">
+			</div>
+			<div class="form-group">
+				<label>验证码</label>
+				<div class="input-group">
+					<input type="text" class="form-control">
+					<div class="input-group-btn">
+						<div class="btn btn-default">获取验证码</div>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<label>密码</label>
+				<input type="password" class="form-control">
+			</div>
+			<div class="form-group">
+				注册栓蛋头条即代表您同意<a href="#">栓蛋头条服务条款</a>
+			</div>
+			<div class="form-group">
+				<button class="btn btn-primary btn-block" type="submit">注册</button>
+			</div>
+		</form>
+	</div>
+	<!-- 页脚 -->
+	<div class="footer">
+		栓蛋头条 © 1998 - 2018 黑龙江科技大学版权所有
+	</div>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/static/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+package com.atyou.service;
+
+import java.util.List;
+
+import org.springframework.ui.Model;
+
+import com.atyou.pojo.Comment;
+import com.atyou.pojo.CommentResult;
+import com.atyou.pojo.Detail;
+import com.atyou.query.CommentQueryObject;
+import com.atyou.query.PageResult;
+import com.github.pagehelper.PageInfo;
+
+public interface DetailService {
+	public Detail queryDetail(Integer id) throws Exception;
+	
+//	public PageResult commentList(CommentQueryObject qo)throws Exception;
+	public PageInfo commentPage(Integer pn,Integer detailId)throws Exception;
+	public PageInfo userCommentPage(Integer pn,Integer userId)throws Exception;
+	public Boolean addComment(Comment comment)throws Exception;
+	public Boolean addCol(Comment comment)throws Exception;
+	public List<CommentResult> commentList(Integer detailId)throws Exception;
+}

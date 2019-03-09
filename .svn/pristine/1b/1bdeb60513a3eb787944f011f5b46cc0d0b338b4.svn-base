@@ -1,0 +1,252 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1 , user-scalable=no">
+    <title>用户中心</title>
+    <link rel="shortcut icon" href="../static/base/images/logo.png">
+    <link rel="stylesheet" href="../static/base/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/base/css/bootstrap-movie.css">
+    <link rel="stylesheet" href="../static/base/css/animate.css">
+    <style>
+        .navbar-brand>img {
+            display: inline;
+        }
+        .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9{
+            padding-right: 3px;
+            padding-left: 3px;
+        }
+        .media{
+            padding:3px;
+            border:1px solid #ccc
+        }
+    </style>
+</head>
+
+<body>
+<!--导航-->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <!--小屏幕导航按钮和logo-->
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="index.html" class="navbar-brand" style="width:250px;">
+                <img src="../static/base/images/logo.png" style="height:30px;">&nbsp;用户中心
+            </a>
+        </div>
+        <!--小屏幕导航按钮和logo-->
+        <!--导航-->
+        <div class="navbar-collapse collapse">
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="curlink" href="/index"><span class="glyphicon "></span>&nbsp;首页</a>
+                </li>
+                <li id="tes">
+		          	<a class="curlink" href="/signup"><span class="glyphicon glyphicon-plus"></span>&nbsp;注册</a>
+		        </li> 
+                
+                <li>
+                    <a class="curlink" href="/logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp;退出</a>
+                </li>
+                <li id="tes"><a class="curlink" href="/user"><span class="glyphicon glyphicon-user"></span>&nbsp;我的</a></li> 
+            </ul>
+        </div>
+        <!--导航-->
+
+    </div>
+</nav>
+<!--导航-->
+<!--内容-->
+<div class="container" style="margin-top:76px">
+    <div class="col-md-3">
+        <div class="list-group">
+            <a href="/user" class="list-group-item ">
+                <span class="glyphicon glyphicon-user"></span>&nbsp;会员中心
+            </a>
+             <a href="/pwd" class="list-group-item">
+                <span class="glyphicon glyphicon-lock"></span>&nbsp;修改密码
+            </a>
+            <a href="/comments" class="list-group-item active">
+                <span class="glyphicon glyphicon-comment"></span>&nbsp;评论记录
+            </a>
+            <a href="/loginlog" class="list-group-item">
+                <span class="glyphicon glyphicon-calendar"></span>&nbsp;登录日志
+            </a>
+            <a href="/moviecol" class="list-group-item">
+                <span class="glyphicon glyphicon-heart"></span>&nbsp;我的收藏
+            </a>
+        </div>
+    </div>
+    <div class="col-md-9">
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <h3 class="panel-title"><span class="glyphicon glyphicon-map-marker"></span>&nbsp;评论记录</h3>
+            </div>
+            <div class="panel-body">
+                <ul class="commentList">
+                <!-- 
+                        <li class="item cl">
+                            <a href="user.html">
+                                <i class="avatar size-L radius">
+                                    <img alt="50x50" src="holder.js/50x50" class="img-circle" style="border:1px solid #abcdef;">
+                                </i>
+                            </a>
+                            <div class="comment-main">
+                                <header class="comment-header">
+                                    <div class="comment-meta">
+                                        <a class="comment-author" href="user.html">xiaoli</a>
+                                        评论于
+                                        <time title="2016-12-07 09:12:51" datetime="2016-12-07 09:12:51">2017-03-01 09:12:51</time>
+                                    </div>
+                                </header>
+                                <div class="comment-body">
+                                    <p>这电影真好看！</p>
+                                </div>
+                            </div>
+                        </li>
+                        -->
+                        <!-- 循环遍历 -->
+                    <c:forEach items="${pageInfo.list}"   var="comm">
+                        <li class="item cl">
+                            <a href="/user" >
+                                <c:if test="${comm.headimage==null}">
+                                <i class="avatar size-L radius">
+                                    <img alt="50x50" width="50" height="50" src="holder.js/50x50" class="img-circle" style="border:1px solid #abcdef;">
+                                </i>
+                                </c:if>
+                                <c:if test="${comm.headimage!=null}">
+                                  
+                                    <img  alt="50x50" width="50" height="50" src="${comm.headimage }" class="img-circle" style="border:1px solid #abcdef;width:50;height:50;float:left;">
+                                    
+                                </c:if>
+                            </a>
+                            
+                            <div class="comment-main">
+                                <header class="comment-header">
+                                    <div class="comment-meta">
+                                    	<c:if test="${comm.userName!=null}">
+                                        <a class="comment-author" href="user.html">${comm.userName }</a>
+                                        </c:if>
+                                        <c:if test="${comm.userName==null}">
+                                        <a class="comment-author" href="user.html">该用户尚未填写用户名</a>
+                                        </c:if>
+                                        评论于
+                                        <time title="${comm.addtime }" datetime="${comm.addtime }">${comm.addtime }</time>
+                                    </div>
+                                </header>
+                                <div class="comment-body">
+                                <!-- （python使用 |safe过滤是html标签显示） -->
+                                    <p>${comm.content}</p>
+                                </div>                               
+                            </div>
+                            
+                        </li>
+                        </c:forEach>
+                        <!-- #循环遍历 -->
+                    </ul>
+                    <div class="col-md-12 text-center">
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination">
+                                <li>
+                                    <a href="/comments?pn=1" aria-label="First">
+                                        <span aria-hidden="true">首页</span>
+                                    </a>
+                                </li>
+                                
+                                <c:if test="${pageInfo.hasPreviousPage}">
+                                <li >
+                                    <a href="/comments?pn=${pageInfo.pageNum-1}" aria-label="Previous">
+                                        <span aria-hidden="true">上一页</span>
+                                    </a>
+                                </li>
+                                </c:if> 
+                                <c:if test="${!pageInfo.hasPreviousPage}">
+                                <li >
+                                    <a href="#" aria-label="Previous">
+                                        <span aria-hidden="true">上一页</span>
+                                    </a>
+                                </li>
+                                </c:if> 
+                                
+                                
+                                <!--循环遍历连续显示的页面，若是当前页就高亮显示，并且没有链接-->  
+			                    <c:forEach items="${pageInfo.navigatepageNums}" var="page_num">  
+			                        <c:if test="${page_num == pageInfo.pageNum}">  
+			                            <li class="active"><a href="#">${page_num}</a></li>  
+			                        </c:if>  
+			                        <c:if test="${page_num != pageInfo.pageNum}">  
+			                            <li><a href="/comments?pn=${page_num}">${page_num}</a></li>  
+			                        </c:if>  
+			                    </c:forEach>
+			                    <c:if test="${pageInfo.hasNextPage}">
+                                <li>
+                                    <a href="/comments?pn=${pageInfo.pageNum+1}" aria-label="Next">
+                                        <span aria-hidden="true">下一页</span>
+                                    </a>
+                                </li>
+			                    </c:if> 
+			                    <c:if test="${!pageInfo.hasNextPage}">
+			                                <li>
+			                                    <a href="#" aria-label="Next">
+			                                        <span aria-hidden="true">下一页</span>
+			                                    </a>
+			                                </li>
+			                    </c:if>  
+                                <li>
+                                    <a href="/comments?pn=${pageInfo.pages}" aria-label="Last">
+                                        <span aria-hidden="true">尾页</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--内容-->
+<!--底部-->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p>
+                    黑科身边事 © 2017 - 2018 黑龙江科技大学版权所有
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--底部-->
+<script src="../static/base/js/jquery.min.js"></script>
+<script src="../static/base/js/bootstrap.min.js"></script>
+<script src="../static/base/js/jquery.singlePageNav.min.js"></script>
+<script src="../static/base/js/wow.min.js"></script>
+<script src="../static/lazyload/jquery.lazyload.min.js"></script>
+<script src="//cdn.bootcss.com/holder/2.9.4/holder.min.js"></script>
+<script>
+    $(function() {
+        new WOW().init();
+    })
+
+</script>
+<script>
+    $(document).ready(function() {
+        $("img.lazy").lazyload({
+            effect: "fadeIn"
+        });
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+package com.atyou.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.atyou.dao.CategoryMapper;
+import com.atyou.dao.ParentCategoryMapper;
+import com.atyou.pojo.Category;
+import com.atyou.pojo.CategoryExample;
+import com.atyou.pojo.ColResult;
+import com.atyou.pojo.CategoryExample.Criteria;
+import com.atyou.pojo.Detail;
+import com.atyou.pojo.ParentCategory;
+import com.atyou.pojo.ParentCategoryExample;
+import com.atyou.service.WebCategoryService;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+
+@Service
+public class WebCategoryServiceImpl implements WebCategoryService{
+	
+	@Autowired
+	private CategoryMapper categoryMapper;
+	@Autowired
+	private ParentCategoryMapper parentCategoryMapper;
+
+	@Override
+	public List<Category> queryCate() {
+		CategoryExample example = new CategoryExample();
+		Criteria criteria = example.createCriteria();
+		//criteria.andIdEqualTo(id);
+		List<Category> list = categoryMapper.selectByExample(example);
+		return list;
+	}
+
+	@Override
+	public List<ParentCategory> queryParentCate() {
+		ParentCategoryExample example = new ParentCategoryExample();
+		com.atyou.pojo.ParentCategoryExample.Criteria criteria = example.createCriteria();
+		//criteria.andIdEqualTo(id);
+		List<ParentCategory> list = parentCategoryMapper.selectByExample(example);
+		return list;
+	}
+
+	@Override
+	public PageInfo indexPage(Integer pn, List<Detail> itemList) throws Exception {
+		 //引入分页查询，使用PageHelper分页功能  
+	    //在查询之前传入当前页，然后多少记录  
+	    PageHelper.startPage(pn,5);  
+	    //startPage后紧跟的这个查询就是分页查询  
+	   
+	    //List<ColResult> emps = newscolMapper.queryCommUserNoDetail(userId);
+	    //使用PageInfo包装查询结果，只需要将pageInfo交给页面就可以  
+	    PageInfo pageInfo = new PageInfo<>(itemList,5);  
+	    //pageINfo封装了分页的详细信息，也可以指定连续显示的页数  
+	    
+		return pageInfo;
+	}
+	
+	
+	
+}

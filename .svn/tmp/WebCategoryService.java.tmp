@@ -1,0 +1,18 @@
+package com.atyou.service;
+
+import java.util.List;
+
+import com.atyou.pojo.Category;
+import com.atyou.pojo.Detail;
+import com.atyou.pojo.ParentCategory;
+import com.github.pagehelper.PageInfo;
+
+public interface WebCategoryService {
+	public List<Category> queryCate();
+	public List<ParentCategory> queryParentCate();
+<<<<<<< .mine
+	public PageInfo indexPage(Integer pn,List<Detail> itemList)throws Exception;
+=======
+	public List<Detail> searchNewsbyTitle(String title);
+>>>>>>> .r220
+}

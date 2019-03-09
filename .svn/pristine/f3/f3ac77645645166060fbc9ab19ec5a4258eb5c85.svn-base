@@ -1,0 +1,5 @@
+package com.atyou.service;
+
+public interface LoginService {
+	public Boolean login(String phone,String password)throws Exception;
+}

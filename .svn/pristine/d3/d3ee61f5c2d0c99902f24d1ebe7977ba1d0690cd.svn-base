@@ -1,0 +1,32 @@
+package com.atyou.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class UserWebController {
+	
+	@RequestMapping("/index")
+	public String webindex() {
+		return "webindex";
+	}
+	@RequestMapping("/details")
+	public String webdetail() {
+		return "details";
+	}
+	@RequestMapping("/indexCopy")
+	public String webindexCopy() {
+		return "indexCopy";
+	}
+	@RequestMapping("/login")
+	public String weblogin() {
+		
+		return "login";
+	}
+	
+	@RequestMapping("/signup")
+	public String websignup() {
+		return "signup";
+	}
+	
+}

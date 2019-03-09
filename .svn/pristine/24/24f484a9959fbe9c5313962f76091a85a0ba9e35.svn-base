@@ -1,0 +1,8 @@
+package com.atyou.service;
+
+import com.atyou.pojo.User;
+
+public interface UserService {
+
+	User selectByPrimaryKey(Integer id);
+}

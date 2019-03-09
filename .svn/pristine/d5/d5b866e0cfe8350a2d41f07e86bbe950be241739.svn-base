@@ -1,0 +1,12 @@
+package com.atyou.service;
+
+import java.util.List;
+
+import com.atyou.pojo.Detail;
+
+public interface WebItemService {
+	
+	public List<Detail> getItemList(Integer cateId,Integer parentCateId);
+	
+	
+}

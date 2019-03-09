@@ -1,0 +1,26 @@
+package com.atyou.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.atyou.dao.UserMapper;
+import com.atyou.pojo.User;
+import com.atyou.service.UserService;
+
+@Service
+public class UserServiceImpl implements UserService{
+
+	@Autowired
+	UserMapper userMapper;
+
+	
+	public User selectByPrimaryKey(Integer id) {
+		// TODO Auto-generated method stub
+		return userMapper.selectByPrimaryKey(id);
+	}
+	
+	
+	
+	
+
+}

@@ -1,0 +1,13 @@
+0:0:0:0:0:0:0:1 - - [20/Apr/2018:20:17:35 +0800] "GET /index HTTP/1.1" 200 8405 http-bio-8081-exec-1 1636
+0:0:0:0:0:0:0:1 - - [20/Apr/2018:20:17:35 +0800] "GET /static/bootstrap-3.3.7-dist/css/bootstrap.min.css HTTP/1.1" 200 121200 http-bio-8081-exec-2 10
+0:0:0:0:0:0:0:1 - - [20/Apr/2018:20:17:35 +0800] "GET /static/image/001.jpg HTTP/1.1" 200 28745 http-bio-8081-exec-5 13
+0:0:0:0:0:0:0:1 - - [20/Apr/2018:20:17:35 +0800] "GET /static/bootstrap-3.3.7-dist/js/bootstrap.min.js HTTP/1.1" 200 37045 http-bio-8081-exec-4 6
+0:0:0:0:0:0:0:1 - - [20/Apr/2018:20:17:35 +0800] "GET /static/css/main.css HTTP/1.1" 200 2564 http-bio-8081-exec-3 17
+0:0:0:0:0:0:0:1 - - [20/Apr/2018:20:17:35 +0800] "GET /static/image/logo.jpg HTTP/1.1" 200 14116 http-bio-8081-exec-8 3
+0:0:0:0:0:0:0:1 - - [20/Apr/2018:20:17:35 +0800] "GET /static/image/1-1.jpg HTTP/1.1" 200 24205 http-bio-8081-exec-6 5
+0:0:0:0:0:0:0:1 - - [20/Apr/2018:20:17:35 +0800] "GET /static/image/003.jpg HTTP/1.1" 200 30035 http-bio-8081-exec-7 7
+0:0:0:0:0:0:0:1 - - [20/Apr/2018:20:17:35 +0800] "GET /static/image/002.jpg HTTP/1.1" 200 15036 http-bio-8081-exec-9 9
+0:0:0:0:0:0:0:1 - - [20/Apr/2018:20:17:35 +0800] "GET /static/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff2 HTTP/1.1" 200 18028 http-bio-8081-exec-6 19
+0:0:0:0:0:0:0:1 - - [20/Apr/2018:20:17:39 +0800] "GET /details HTTP/1.1" 200 8318 http-bio-8081-exec-6 124
+0:0:0:0:0:0:0:1 - - [20/Apr/2018:20:17:39 +0800] "GET /static/image/2-1.jpg HTTP/1.1" 200 59000 http-bio-8081-exec-6 8
+0:0:0:0:0:0:0:1 - - [20/Apr/2018:20:17:39 +0800] "GET /static/image/2-2.jpg HTTP/1.1" 200 32058 http-bio-8081-exec-1 3
